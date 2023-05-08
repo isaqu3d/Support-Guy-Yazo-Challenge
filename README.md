@@ -25,6 +25,8 @@ Para iniciar o desafio execute um [fork](https://github.com/Yazo-Connecting-Expe
 
 Ao rodar o projeto você verá um menu com os 3 desafios, ao acessar cada desafio você vera um icone de "?" no canto superior direito, ele indica o que deve ser feito neste desáfio.
 
+![tooltip](assets/tooltip.png)
+
 Após o desenvolvimento da resolução dos desafios, você pode realizar o commit e o push para o seu fork, e então enviar o URL do seu repositório pelo WhatsApp
 
 
