@@ -23,6 +23,8 @@ Este exercício consiste em uma união de três problemas comuns que o Support G
 
 Para iniciar o desafio execute um [fork](https://github.com/Yazo-Connecting-Experiences/Support-Guy-Yazo-Challenge/fork), com o fork em mão você poderá fazer o clone do projeto para sua maquina para então seguir para a configuração do projeto
 
+Ao rodar o projeto você verá um menu com os 3 desafios, ao acessar cada desafio você vera um icone de "?" no canto superior direito, ele indica o que deve ser feito neste desáfio.
+
 Após o desenvolvimento da resolução dos desafios, você pode realizar o commit e o push para o seu fork, e então enviar o URL do seu repositório pelo WhatsApp
 
 
