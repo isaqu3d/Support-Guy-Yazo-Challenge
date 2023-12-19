@@ -5,10 +5,12 @@ import {
 } from '../interfaces/dtos/schedule.list.dtos';
 
 export const listScheduleAPI = ({
-  page
+  page,
+  search,
 }: IListScheduleDTO): IListScheduleAPI =>
   api.get('schedules', {
     params: {
-      page
+      page,
+      search,
     },
   });
