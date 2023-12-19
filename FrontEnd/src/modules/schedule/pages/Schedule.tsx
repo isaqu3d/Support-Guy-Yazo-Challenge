@@ -1,25 +1,25 @@
 import { Flex } from '@chakra-ui/react';
-import { SearchBar } from 'shared/components/molecules/SearchBar/SearchBar';
 import { useCallback, useEffect, useState } from 'react';
+import { SearchBar } from 'shared/components/molecules/SearchBar/SearchBar';
 import { ScheduleCard } from '../components/ScheduleCard/ScheduleCard';
-import { useSchedule } from '../hooks/useSchedule';
 import { useHandleSchedule } from '../handlers/schedule.handlers';
+import { useSchedule } from '../hooks/useSchedule';
 
 export const Schedule = () => {
   const { schedules, listSchedule, status } = useSchedule();
   const { handleSchedule } = useHandleSchedule();
-  const [search, setSearch] = useState<string>();
+  const [search, setSearch] = useState('');
 
   const loadCategories = useCallback(
-    (p = 1) => {
-      listSchedule({ page: p });
+    (p = 1, s = '') => {
+      listSchedule({ page: p, search: s });
     },
     [listSchedule]
   );
 
   useEffect(() => {
-    loadCategories();
-  }, [loadCategories]);
+    loadCategories(1, search);
+  }, [loadCategories, search]);
 
   return (
     <Flex gap="8px" flexDirection="column">
