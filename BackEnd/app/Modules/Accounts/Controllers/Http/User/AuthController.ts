@@ -3,19 +3,18 @@ import { container } from 'tsyringe'
 
 import { LoginSchema, StoreUserSchema } from 'App/Modules/Accounts/Validators/User'
 
-import AuthorizationException from 'App/Shared/Exceptions/AuthorizationException'
 import UsersRepository from 'App/Modules/Accounts/Repositories/UsersRepository'
 import { RoleServices } from 'App/Modules/Accounts/Services/Admin'
+import AuthorizationException from 'App/Shared/Exceptions/AuthorizationException'
 
 export default class AuthController {
   public async login({ request, auth, response }: HttpContextContract): Promise<void> {
     const { uid, password } = await request.validate({ schema: LoginSchema })
 
-    const lowerCaseUid = uid.toLowerCase()
     try {
       const token = await auth
         .use('api')
-        .attempt(lowerCaseUid, password, { name: 'acl-token', expiresIn: '1h' })
+        .attempt(uid, password, { name: 'acl-token', expiresIn: '1h' })
 
       return response.json({ auth: token, user: auth.user })
     } catch (error) {
